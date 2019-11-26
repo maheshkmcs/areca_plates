@@ -1,0 +1,231 @@
+*,::before,::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+header{
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.container{
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.menu-icons{
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 40%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 1500;
+    display: none;
+}
+nav{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    background: #000000cc;
+}
+.nav-list{
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+.nav-list li{
+    line-height: 15px;
+    position: relative;
+}
+.sub-menu li{
+    line-height: 20px;
+}
+.nav-list a{
+    display: block;
+    color: white;
+    padding: 10px 0 0 50px;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    transition: color 650ms;
+}
+.nav-list a:hover{
+    color: #eb3007;
+}
+.sub-menu{
+    width: 200px;
+    left: 50px;
+    padding: 0 11px 10px 0px;
+    display: block;
+    position: absolute;
+    border-top: 3px solid #eb3007;
+    background-color: #191919d3;
+    z-index: 100;
+    top: 100px;
+    transition: all 650ms ease;
+    opacity: 0;
+    visibility: hidden;
+    text-align: center;
+}
+.sub-menu::before{
+    content: "";
+    position: absolute;
+    top: -22px;
+    left: 100px;
+    border: 10px solid transparent;
+    border-bottom-color: #eb3007;
+
+}
+.sub-menu .sub-menu::before{
+    top: 8px;
+    left: -21px;
+    border: 10px solid transparent;
+    border-right-color: #eb3007;
+}
+.sub-menu .sub-menu{
+    border-top: none;
+    border-left: 3px solid #eb3007;
+    top: 50px;
+    left: 110%;
+}
+.nav-list li:hover > .sub-menu{
+    top: 40px;
+    opacity: 1;
+    visibility: visible;
+}
+.sub-menu li:hover > .sub-menu{
+    top: 0px;
+    left: 110%;
+}
+@media screen and (max-width: 850px){
+    .nav-list{
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        display: none;
+        flex-direction: column;
+        background-color: gray;
+        z-index: 1000;
+        align-items: initial;
+        overflow-y: scroll;
+    }
+    .nav-list > li{
+        line-height: 15px;
+    }
+    .sub-menu{
+        position: initial;
+        border: 3px solid transparent;
+        border-left-color: #eb3007;
+        margin-left: 1rem;
+    }
+    .sub-menu::before{
+        display: none;
+    }
+    .nav-list li:hover > .sub-menu{
+        opacity: 1;
+        visibility: visible;
+        max-height: initial;
+    }
+    .menu-icons{
+        display: block;
+    }
+    .ion-md-close{
+        display: none;
+    }
+    nav.active .ion-md-close{
+        display: block;
+    }
+    nav.active .ion-md-menu{
+        display: none;
+    }
+    nav.active .nav-list{
+        display: flex;
+    }
+}
+
+h3{
+    background: rgba(255, 255, 255, 0.678);
+    line-height: 70px;
+    text-align: center;
+    font-family: cursive;
+    text-transform: uppercase;
+}
+
+/* Footer */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.footer{
+    width: 100%;
+    background: #262626c0;
+    display: block;
+}
+.inner-footer{
+    width: 95%;
+    margin: auto;
+    padding: 5px 5px 5px 5px;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    justify-content: center;
+    line-height: 25px;
+}
+.footer-items{
+    width: 30%;
+    padding: 5px 5px;
+    box-sizing: border-box;
+}
+h2{
+    margin: 10px 0;
+    color: white;
+    font-size: 16px;
+    font-weight: lighter;
+    text-transform: uppercase;
+}
+.border{
+    height: 2px;
+    width: 40px;
+    background: #ff9800;
+} 
+ul{
+    list-style: none;
+    color: white;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+}
+ul a{
+    text-decoration: none;
+    outline: none;
+    color: white;
+    transition: 0.3s;
+}
+ul a:hover{
+    color: #ff9800;
+}
+ul li{
+    margin: 10px 0;
+    height: 25px;
+}
+li i{
+    margin-right: 20px;
+}
+.footer-bottom{
+    padding: 15px;
+    background: #32CD32;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    letter-spacing: 0.2px;
+}
